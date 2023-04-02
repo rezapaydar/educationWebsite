@@ -3,6 +3,7 @@
 :root{
     --pink:#ff046f;
     --violet:#c63bfa;
+    --fontSize:2rem;
 }
 
 *{
@@ -23,7 +24,9 @@ html{
     overflow: hidden;
 }
 
-header{
+
+
+header {
     width: 96%;
     background: #fff;
     position: fixed;
@@ -33,7 +36,11 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem;
+    padding: 1rem 2rem 1rem 2rem;
+}
+
+header .logo{
+    font-size: var(--fontSize);
 }
 
 header ul {
@@ -48,11 +55,127 @@ header ul li {
 }
 
 header ul li a {
-    font-size: 1rem;
+    font-size: var(--fontSize);
     color:var(--pink);
+    transition: 0.3s;
+}
+
+header ul li a:hover {
+    color:var(--violet);
+}
+
+/* ***********************   منو شماره دو    *********************************/
+.navbar2{
+    display: none;
+}
+
+.navbar2 ul {
+    display: none;
+    justify-content: space-around;
+
+}
+
+.navbar2 ul li {
+    list-style-type: none;
+    padding: 1rem;
+}
+
+.navbar2 ul li a {
+    font-size: var(--fontSize);
+    color:var(--pink);
+    transition: 0.3s;
+}
+
+.navbar2 ul li a:hover {
+    color:var(--violet);
 }
 
 body{
+    height: 3000px;
+    overflow-y: scroll;
     background: #333;
 }
 
+.logo{
+    font-size:3rem;
+    font-weight: bold;
+    color: var(--violet);
+    text-transform: uppercase;
+}
+
+.logo i{
+    padding-left:10px;
+    padding: .2rem;
+}
+
+.fa-bars , .fa-times{
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--pink);
+    transition: 0.3s;
+}
+
+.fa-bars:hover , .fa-times:hover{
+    color: var(--violet);
+}
+
+@media (max-width:768px) {
+
+    html{
+        font-size: 55%;
+    }
+
+    .fa-bars , .fa-times{
+        display: block;
+    }
+    
+    
+    /* ul:nth-child(0){
+        display: none;
+        flex-direction: column;
+    } */
+
+    .navbar{
+        display: none;
+    }
+
+    ul:nth-child(1){
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 8rem; left:1.5rem;
+        z-index: 99999;
+        width: 96%;
+        border-radius:1rem;
+        /* visibility: hidden; */
+        transition: 0.3s;
+    }
+    
+    header {
+        flex-direction: row;
+        /* padding: 2rem 0; */
+  
+
+    }
+/*     
+    nav .navbar {
+        position: absolute;
+        top: 5rem; left:0;
+        width: 100%;
+        border-radius:1rem;
+        opacity: 0;
+        display: none;
+        transition: 0.3s;
+    } */
+
+    .navbar-toggle{
+        top:9rem;
+        opacity: 1;
+
+    }
+
+}
