@@ -36,7 +36,9 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 2rem 1rem 2rem;
+    z-index: 9999;
+    padding: 1rem 3rem 1rem 3rem;
+    transition: .3s;
 }
 
 header .logo{
@@ -60,7 +62,8 @@ header ul li a {
     transition: 0.3s;
 }
 
-header ul li a:hover {
+header ul li a.active 
+,header ul li a:hover {
     color:var(--violet);
 }
 
@@ -93,7 +96,7 @@ header ul li a:hover {
 body{
     /* height: 3000px; */
     overflow-y: scroll;
-    background: #333;
+    background: #f8f8f8;
 }
 
 .logo{
@@ -124,24 +127,26 @@ body{
 /* ***************************  home section ************************************** */
 
 section.home{
-    width: 100%;
+    width: 100vw;
     height: 100%;
     background: linear-gradient(#c73bfacf,#ff0471c9) , url(../images/homebg.jpg) ;
     background-repeat: none;
     background-size: cover;
     background-attachment: fixed;
     text-align: center;
+    z-index: -1;
 }
 
 .home::before{
     content: '';
     position: absolute;
-    top: -25rem;left: 50%;
-    transform: translateX(50%);
+    top: 50rem;left: 50%;
+    transform: translateX(-50%);
     border-top: 70vh solid white;
     width: 120%;
     border-radius: 50%;
-    z-index: -1;
+    background: #f8f8f8;
+    z-index: 1;
 }
 
 .home .content{
@@ -152,6 +157,7 @@ section.home{
     padding-top:14rem;
     padding-bottom: 8rem;
     text-align: center;
+
 }
 
 .home .content h1{
@@ -215,6 +221,8 @@ section.home{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    z-index: 96999;
+
 }
 
 .home .box-container .box svg{
@@ -251,10 +259,10 @@ section.home{
 }
 
 .heading{
-    font-size: 4rem;
+    font-size: 6rem;
     color: var(--pink);
     text-align: center;
-    padding: 0 1rem;
+    padding: 8rem 1rem 0 1rem;
     padding-top: 6rem;
     letter-spacing: .6rem;
 }
@@ -267,15 +275,22 @@ section.home{
     color: #aaa;
 }
 
+.about {
+    z-index: 9999;
+}
+
 .about .row{
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 10rem;
 
 }
 .about .row .image img{
     height: 70vh;
     width: 50vw;
+    padding: 2rem;
+
 }
 .about .row .content{
     padding-left: 5rem;
@@ -311,6 +326,81 @@ transition: .2s;
     opacity: .8;
 }
 
+.teacher{
+    background: #f9f9f9;
+}
+
+.teacher .card-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+}
+
+.teacher .card-container .card{
+    /* padding: 2rem; */
+    border-radius: 5rem;
+    margin: 2rem;
+    background: #fff;
+    text-align: center;
+    width: 28rem;
+    box-shadow: 0 .3rem .5rem rgba(0, 0, 0, .3);
+    position: relative;
+    overflow: hidden;
+}
+
+.teacher .card-container .card .image{
+    position: relative;
+    flex: 1 1 120px;
+    aspect-ratio: 1/1;
+}
+
+.teacher .card-container .card img{
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale();
+    transition: 0.3s;
+}
+
+.teacher .card-container .card:hover img{
+    filter: grayscale(0);
+
+}
+
+.teacher .card-container .card h3{
+    color: var(--pink);
+    font-size: 2rem;
+    padding: .5rem 0;
+}
+
+.teacher .card-container .card p{
+    color:#666;
+    font-size: 2rem;
+}
+
+.teacher .card-container .card svg{
+    height: 4rem;
+    width: 4rem;
+    line-height: 6rem;
+    text-align: center;
+    border-radius: 95%;
+    padding: 1rem;
+    color: var(--violet);
+    background: #f8f8f8;
+    transition:.2s;
+    font-size: 3rem;
+}
+
+.teacher .card-container .card svg:hover{
+    color: var(--pink);
+}
+
+/* ***************** media query responsive ********************** */
 
 @media (max-width:768px) {
 
@@ -381,3 +471,5 @@ transition: .2s;
     }
 
 }
+
+/* ***************** media query responsive ********************** */

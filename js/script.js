@@ -1,4 +1,4 @@
-
+// $(".navbar2").text("New Text");
 
 
 function clicker() {
@@ -39,14 +39,43 @@ window.addEventListener('scroll',()=>{
     // let scrollPosition = window.pageYOffset;
     if (window.pageYOffset >= 30) {
         click.classList.remove('fa-times');
-        navbar.style.display='none';
-        header.style.position="relative";
-    }else{
+        // navbar.style.display='none';
         header.style.position="fixed";
+        header.style.width="96%";
+        header.style.borderRadius="5rem";
+        header.style.top="2rem";
+        header.style.boxShadow="1px 5px 41px 5px rgba(0,0,0,0.3)";
+        header.style.background="#fff";
+        
+
+    }else{
+        header.style.position="relative";
+        header.style.width="100%";
+        header.style.borderRadius="0";
+        header.style.top="0";
+        header.style.boxShadow="none";
+        header.style.background="transparent";
 
     }
+
+    // var section = $('section')
+    $('section').each(function(i,Element) {
+        var top = $(window).scrollTop();
+        var id = $(Element).attr('id');
+        var height= $(Element).height();
+        var offset = $(Element).offset().top - 200;
+        // var top = offset.top;
+        // var left = offset.left;
+        if (top>=offset && top < height + offset) {
+            $('.navbar ul li a').removeClass('active');
+            $('.navbar').find(`a[href="#${id}"]`).addClass('active');
+            console.log(`[href="#${id}]"`)
+        }
+    })
             
 });
+
+
 
 // setInterval(function() {
 //     var scrollPosition = window.scrollY;
