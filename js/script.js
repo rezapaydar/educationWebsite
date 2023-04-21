@@ -40,23 +40,40 @@ window.addEventListener('scroll',()=>{
     if (window.pageYOffset >= 30) {
         click.classList.remove('fa-times');
         // navbar.style.display='none';
+
         header.style.position="fixed";
+        header.style.width="100%";
+        header.style.borderRadius="0";
+        header.style.top="0";
+        header.style.boxShadow="none";
+        header.style.background="white";
+
+    }else{
+
+
+
+        header.style.position="relative";
         header.style.width="96%";
         header.style.borderRadius="5rem";
         header.style.top="2rem";
         header.style.boxShadow="1px 5px 41px 5px rgba(0,0,0,0.3)";
         header.style.background="#fff";
-        
-
-    }else{
-        header.style.position="relative";
-        header.style.width="100%";
-        header.style.borderRadius="0";
-        header.style.top="0";
-        header.style.boxShadow="none";
-        header.style.background="transparent";
 
     }
+
+        var element = document.getElementById('review');
+        var position = element.getBoundingClientRect();
+        var scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+      
+        if (position.top <= scrollPosition) {
+          // کاری که می‌خواهید انجام دهید
+            $("#header").addClass('transHeader');
+            $("#header").css("background-color", "transparent");
+        }else{
+            $("#header").css("background-color", "white");
+            $("#header").removeClass('transHeader');
+        }
+      
 
     // var section = $('section')
     $('section').each(function(i,Element) {

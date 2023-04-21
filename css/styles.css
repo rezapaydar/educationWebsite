@@ -24,6 +24,23 @@ html{
     /* overflow: hidden; */
 }
 
+.heading{
+    font-size: 6rem;
+    color: var(--pink);
+    text-align: center;
+    padding: 8rem 1rem 0 1rem;
+    padding-top: 6rem;
+    letter-spacing: .6rem;
+}
+
+.title{
+    padding: 0 1rem;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 500;
+    color: #aaa;
+}
+
 
 
 header {
@@ -124,7 +141,7 @@ body{
 }
 
 
-/* ***************************  home section ************************************** */
+/* ***************** NOTE START HOME section ***************** */
 
 section.home{
     width: 100vw;
@@ -140,12 +157,12 @@ section.home{
 .home::before{
     content: '';
     position: absolute;
-    top: 50rem;left: 50%;
+    top: 55rem;left: 50%;
     transform: translateX(-50%);
-    border-top: 70vh solid white;
+    border-top: 70vh solid #f8f8f8;
     width: 120%;
     border-radius: 50%;
-    background: #f8f8f8;
+    /* background: #f8f8f8; */
     z-index: 1;
 }
 
@@ -193,7 +210,6 @@ section.home{
 
 }
 
-/* *******************************  home section boxes ***************************  */
 
 .home .box-container{
 
@@ -258,22 +274,12 @@ section.home{
     color: #333;
 }
 
-.heading{
-    font-size: 6rem;
-    color: var(--pink);
-    text-align: center;
-    padding: 8rem 1rem 0 1rem;
-    padding-top: 6rem;
-    letter-spacing: .6rem;
-}
+/* ***************** NOTE END HOME section ***************** */
 
-.title{
-    padding: 0 1rem;
-    font-size: 2rem;
-    text-align: center;
-    font-weight: 500;
-    color: #aaa;
-}
+
+
+/* ***************** NOTE START ABOUT section ***************** */
+
 
 .about {
     z-index: 9999;
@@ -326,6 +332,13 @@ transition: .2s;
     opacity: .8;
 }
 
+
+
+/* ***************** NOTE end ABOUT section ***************** */
+
+/* ***************** NOTE START teacher section ***************** */
+
+
 .teacher{
     background: #f9f9f9;
 }
@@ -340,7 +353,7 @@ transition: .2s;
 
 .teacher .card-container .card{
     /* padding: 2rem; */
-    border-radius: 5rem;
+    border-radius: 2rem;
     margin: 2rem;
     background: #fff;
     text-align: center;
@@ -369,6 +382,7 @@ transition: .2s;
 
 .teacher .card-container .card:hover img{
     filter: grayscale(0);
+    transform: translateY(-15px);
 
 }
 
@@ -400,7 +414,196 @@ transition: .2s;
     color: var(--pink);
 }
 
-/* ***************** media query responsive ********************** */
+/* ***************** NOTE end teacher section ***************** */
+
+
+
+/* ***************** NOTE start course section ***************** */
+
+.course .box-container{
+
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    /* align-items: center; */
+    
+}
+
+.course .box-container .box{
+    padding: 5rem;
+    height: auto;
+    width: 25rem;
+    margin: 3.5rem 2rem;
+    text-align: center;
+    box-shadow: 8px 10px 0px 0px #c63bfa,-5px -5px 10px 0px rgba(0,0,0,0.1);    padding: 1rem;
+    border-radius: 2rem;
+    transition: 0.2s;
+}
+
+.course .box-container .box:hover{
+    box-shadow: 8px 10px 20px 0px #c63bfa,-14px -10px 38px -17px rgba(0,0,0,0.1);    padding: 1rem;
+    transform: translateY(-5px);
+}
+
+.course .box-container .box svg{
+    height: 10rem;
+    width: 10rem;
+    line-height: 8rem;
+    text-align: center;
+    color: white;
+    background: var(--pink);
+    border-radius: 50%;
+    border-left: 1rem solid  var(--pink);
+    border-right: 1rem solid  var(--pink);
+    padding: 2rem;
+    box-shadow: 0 0 0 1rem #fff inset;
+    font-size: 3.5rem;
+}
+
+.course .box-container .box h3{
+    margin-top: 5px;
+    font-size: 2rem;
+    color: var(--violet);
+}
+
+
+.course .box-container .box p{
+    font-size: 1.5rem;
+    color:#666;
+    padding: 1rem 0;
+}
+
+/* ***************** NOTE  end course section ***************** */
+
+
+/* ***************** NOTE  START REVIEW section ***************** */
+
+.review{
+    margin: 10rem 0;
+    background: linear-gradient(#1f1f1fcf,#191919ef), url(/images/bgone.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 5rem 0;
+}
+
+.review .card-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+}
+
+.review .card-container .card{
+    /* padding: 2rem; */
+    border-radius: 1rem;
+    margin: 2rem;
+    background: #fff;
+    text-align: center;
+    width: 28rem;
+    box-shadow: 0 .3rem .5rem rgba(0, 0, 0, .3);
+    position: relative;
+    overflow: visible;
+    transition: 0.3s;
+
+}
+
+.review .card-container .card .image{
+    /* position: relative;
+    flex: 1 1 120px;
+    aspect-ratio: 1/1; */
+/* margin: 0rem 5rem 0rem 5rem; */
+display: flex;
+justify-content: center;
+padding: 2rem;
+}
+
+.review .card-container .card img{
+    z-index: 1;
+    inset: 0;
+    width:8rem;
+    height: 8rem;
+    /* filter: grayscale(); */
+    transition: 0.3s;
+    border-radius: 5rem;
+    object-fit: cover;
+    margin-top: -4rem;
+    /* margin: 0 auto; */
+    border: .6rem solid var(--pink);
+    border-left: .6rem solid var(--pink);
+    border-right: .6rem solid var(--pink);
+}
+
+
+
+.review .card-container .card h3{
+    color: var(--pink);
+    font-size: 3rem;
+    padding: .5rem 0;
+}
+
+
+.review .card-container .card p{
+    color:#666;
+    font-size: 1.5rem;
+}
+
+.review .card-container .card .icons{
+    margin: 2rem 0;
+}
+
+.review .card-container .card svg{
+    height: 4rem;
+    width: 4rem;
+    line-height: 6rem;
+    text-align: center;
+    border-radius: 95%;
+    padding: 1rem;
+    color: var(--violet);
+    background: #f8f8f8;
+    transition:.2s;
+    font-size: 3rem;
+}
+
+.review .card-container .card svg:hover{
+    color: var(--pink);
+}
+
+.transHeader{
+    background: transparent;
+}
+
+/* ***************** NOTE  END REVIEW section ***************** */
+
+
+/*  ANCHOR SWIPER CONTAINER */
+
+swiper-container {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: auto;
+    height: auto;
+  }
+
+  swiper-slide img {
+    display: block;
+    width: 100%;
+  }
+
+/*  ANCHOR SWIPER CONTAINER */
+
+
+/* ***************** NOTE start media query responsive ********************** */
 
 @media (max-width:768px) {
 
@@ -470,6 +673,15 @@ transition: .2s;
         padding: 3rem;
     }
 
+    .home::before{
+        content: "";
+        border: none;
+    }
+
+    .home .content p{
+         padding: 1rem 5rem;
+    }
+
 }
 
-/* ***************** media query responsive ********************** */
+/* ***************** NOTE end media query responsive ********************** */
